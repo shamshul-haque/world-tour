@@ -14,11 +14,13 @@ const Countries = () => {
   return (
     <div>
       <h1>Country: {countries.length}</h1>
-      {countries.map((country, index) => (
-        <div key={index}>
-          <Country country={country} />
-        </div>
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        {countries.map((country, index) => (
+          <div key={index}>
+            <Country country={country} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
