@@ -15,13 +15,21 @@ const Countries = () => {
   }, []);
 
   const handleVisitedCountry = (country) => {
-    console.log("list");
+    const newVisitedCountries = [...visitedCountry, country];
+    setVisitedCountry(newVisitedCountries);
   };
   return (
     <div>
       <div>
         <h1>Country: {countries.length}</h1>
-        <h2>Visited Countries</h2>
+        <h2>Visited Countries: {visitedCountry.length}</h2>
+        <ul>
+          {visitedCountry.map((country, index) => (
+            <li key={index} className="ml-10">
+              {country?.name?.common}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3">
