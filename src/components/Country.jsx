@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountry }) => {
   console.log(country);
   const { name, flags, population, area, cca2 } = country;
   const [visited, setVisited] = useState(false);
@@ -8,8 +8,15 @@ const Country = ({ country }) => {
   const handleVisited = () => {
     setVisited(!visited);
   };
+
+  console.log(handleVisitedCountry);
+
   return (
-    <div className="border-2 border-red-400 m-5 p-5 rounded-lg">
+    <div
+      className={`border-2 border-red-400 m-5 p-5 rounded-lg ${
+        visited && "bg-green-400"
+      }`}
+    >
       <p>Name:{name?.common}</p>
       <img src={flags?.png} alt={name?.common} class="h-40 w-full rounded-md" />
       <p>Population: {population}</p>
