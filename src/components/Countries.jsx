@@ -21,9 +21,13 @@ const Countries = () => {
   return (
     <div>
       <div>
-        <h1>Country: {countries.length}</h1>
-        <h2>Visited Countries: {visitedCountry.length}</h2>
-        <ul>
+        <h1 className="text-center font-bold text-2xl pt-5">
+          Country: {countries.length}
+        </h1>
+        <h2 className="text-center font-bold text-xl pt-5">
+          Visited Countries: {visitedCountry.length}
+        </h2>
+        <ul className="text-center">
           {visitedCountry.map((country, index) => (
             <li key={index} className="ml-10">
               {country?.name?.common}
